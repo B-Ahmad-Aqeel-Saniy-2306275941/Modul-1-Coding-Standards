@@ -42,5 +42,13 @@ public class ProductRepository {
         return existing;
     }
 
+    public boolean deleteById(String productId) {
+        Product existing = findById(productId);
+        if (existing == null) return false;
+
+        productData.remove(existing);
+        return true;
+    }
+
 
 }
