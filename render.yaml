@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: eshop-app
+    runtime: docker
+    repo: https://github.com/B-Ahmad-Aqeel-Saniy-2306275941/Modul-1-Coding-Standards
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: production
