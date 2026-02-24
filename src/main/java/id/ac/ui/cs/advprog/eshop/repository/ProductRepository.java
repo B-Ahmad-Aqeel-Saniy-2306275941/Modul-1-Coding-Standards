@@ -34,20 +34,20 @@ public class ProductRepository {
         return null;
     }
 
-    public Product update(Product updated) {
-        Product existing = findById(updated.getProductId());
-        if (existing == null) return null;
+    public Product update(Product updatedProduct) {
+        Product existingProduct = findById(updatedProduct.getProductId());
+        if (existingProduct == null) return null;
 
-        existing.setProductName(updated.getProductName());
-        existing.setProductQuantity(updated.getProductQuantity());
-        return existing;
+        existingProduct.setProductName(updatedProduct.getProductName());
+        existingProduct.setProductQuantity(updatedProduct.getProductQuantity());
+        return existingProduct;
     }
 
     public boolean deleteById(String productId) {
-        Product existing = findById(productId);
-        if (existing == null) return false;
+        Product existingProduct = findById(productId);
+        if (existingProduct == null) return false;
 
-        productData.remove(existing);
+        productData.remove(existingProduct);
         return true;
     }
 
